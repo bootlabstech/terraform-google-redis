@@ -29,7 +29,7 @@ variable "authorized_network" {
 variable "region" {
   description = "The name of the Redis region of the instance."
   type        = string
-  default     = "asia-south"
+  default     = "asia-south1"
 }
 
 variable "redis_configs" {
