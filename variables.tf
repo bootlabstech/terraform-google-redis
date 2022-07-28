@@ -61,3 +61,8 @@ variable "transit_encryption_mode" {
   type        = string
   default     = "SERVER_AUTHENTICATION"
 }
+variable "connect_mode" {
+  description = "The connect mode of the Redis instance"
+  type        = string
+  default     = "PRIVATE_SERVICE_ACCESS"
+}
