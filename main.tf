@@ -10,4 +10,5 @@ resource "google_redis_instance" "gcp_redis" {
   project                 = var.project_id
   auth_enabled            = var.auth_enabled
   transit_encryption_mode = var.transit_encryption_mode
+  connect_mode            = var.connect_mode
 }
