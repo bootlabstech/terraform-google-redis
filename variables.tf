@@ -14,8 +14,8 @@ variable "project_id" {
   type        = string
 }
 
-variable "reserved_ip_range" {
-  description = "The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network."
+variable "secondary_ip_range" {
+  description = "secondary_ip_range"
   type        = string
 }
 
