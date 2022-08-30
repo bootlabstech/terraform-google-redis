@@ -63,7 +63,7 @@ variable "connect_mode" {
   default     = "PRIVATE_SERVICE_ACCESS"
 }
 
-variable "secondary_ip_range" {
+variable "reserved_ip_range" {
   type        = string
   description = "For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection,"
 }

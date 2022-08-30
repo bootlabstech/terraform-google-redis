@@ -10,5 +10,5 @@ resource "google_redis_instance" "gcp_redis" {
   auth_enabled            = var.auth_enabled
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
-  secondary_ip_range      = var.secondary_ip_range
+  reserved_ip_range       = var.reserved_ip_range
 }
