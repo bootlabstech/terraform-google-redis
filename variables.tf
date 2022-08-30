@@ -14,10 +14,6 @@ variable "project_id" {
   type        = string
 }
 
-# variable "reserved_ip_range" {
-#   description = "The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network."
-#   type        = string
-# }
 
 variable "authorized_network" {
   description = "The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default network will be used."
