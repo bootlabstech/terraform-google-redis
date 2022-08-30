@@ -14,10 +14,10 @@ variable "project_id" {
   type        = string
 }
 
-variable "reserved_ip_range" {
-  description = "The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network."
-  type        = string
-}
+# variable "reserved_ip_range" {
+#   description = "The CIDR range of internal addresses that are reserved for this instance. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique and non-overlapping with existing subnets in an authorized network."
+#   type        = string
+# }
 
 variable "authorized_network" {
   description = "The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default network will be used."
@@ -65,4 +65,9 @@ variable "connect_mode" {
   description = "The connect mode of the Redis instance"
   type        = string
   default     = "PRIVATE_SERVICE_ACCESS"
+}
+
+variable "secondary_ip_range" {
+  type        = string
+  description = "For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection,"
 }
