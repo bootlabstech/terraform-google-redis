@@ -1,3 +1,6 @@
+data "google_compute_network" "redis-network" {
+  name = "var.name_reserved_ip_range"
+}
 resource "google_redis_instance" "gcp_redis" {
   name                    = var.name
   memory_size_gb          = var.memory_size_gb
@@ -10,5 +13,5 @@ resource "google_redis_instance" "gcp_redis" {
   auth_enabled            = var.auth_enabled
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
-  reserved_ip_range       = var.reserved_ip_range
+  reserved_ip_range       = data.google_compute_network.redis-network.id
 }
