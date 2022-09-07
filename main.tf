@@ -1,5 +1,6 @@
 data "google_compute_network" "redis-network" {
-  name = "var.name_reserved_ip_range"
+  name    = var.name_reserved_ip_range
+  project = var.host_project_id
 }
 resource "google_redis_instance" "gcp_redis" {
   name                    = var.name

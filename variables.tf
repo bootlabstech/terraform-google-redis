@@ -67,3 +67,8 @@ variable "name_reserved_ip_range" {
   type        = string
   description = "For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection,"
 }
+
+variable "host_project_id" {
+  type        = string
+  description = "The project id of the host project"
+}
