@@ -8,7 +8,8 @@ resource "google_project_service" "redisapi" {
 }
 resource "google_redis_instance" "gcp_redis" {
   depends_on              = [google_project_service.redisapi]
-  name                    = var.name
+  count                   = var.no_of_redis_caches
+  name                    = var.redis_name[count.index]
   memory_size_gb          = var.memory_size_gb
   authorized_network      = var.authorized_network
   redis_configs           = var.redis_configs

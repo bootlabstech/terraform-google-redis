@@ -1,7 +1,7 @@
 //required variables
-variable "name" {
+variable "redis_name" {
   description = "The ID of the instance or a fully qualified identifier for the instance."
-  type        = string
+  type        = list(string)
 }
 
 variable "memory_size_gb" {
@@ -13,13 +13,10 @@ variable "project_id" {
   description = "The ID of the project in which the resource belongs. If it is not provided, the provider project is used"
   type        = string
 }
-
-
 variable "authorized_network" {
   description = "The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default network will be used."
   type        = string
 }
-
 //optional variables
 
 variable "region" {
@@ -72,3 +69,8 @@ variable "host_project_id" {
   type        = string
   description = "The project id of the host project"
 }
+variable "no_of_redis_caches" {
+  type        = number
+  description = "The no_of_redis_caches in the project"
+}
+
