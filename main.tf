@@ -21,4 +21,6 @@ resource "google_redis_instance" "gcp_redis" {
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
   reserved_ip_range       = data.google_compute_network.redis-network.id
+  replica_count           = var.replica_count
+  read_replicas_mode      = var.read_replicas_mode
 }

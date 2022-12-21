@@ -17,6 +17,14 @@ variable "authorized_network" {
   description = "The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default network will be used."
   type        = string
 }
+variable "replica_count" {
+  description = "no of replicas for the instance."
+  type        = string
+}
+variable "read_replicas_mode" {
+  description = "replication mode for the instance."
+  type        = string
+}
 //optional variables
 
 variable "region" {
