@@ -8,9 +8,9 @@ resource "google_project_service" "redisapi" {
 }
 resource "google_redis_instance" "gcp_redis" {
   depends_on              = [google_project_service.redisapi]
-  count                   = var.no_of_redis_caches
-  name                    = var.redis_name[count.index]
-  memory_size_gb          = var.memory_size_gb
+  for_each                = { for redis in var.rediscache_details : redis.name => redis }       
+  name                    = each.value.name
+  memory_size_gb          = each.value.memory_size_gb 
   authorized_network      = var.authorized_network
   redis_configs           = var.redis_configs
   redis_version           = var.redis_version
@@ -21,6 +21,4 @@ resource "google_redis_instance" "gcp_redis" {
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
   reserved_ip_range       = data.google_compute_network.redis-network.id
-  replica_count           = var.replica_count
-  read_replicas_mode      = var.read_replicas_mode
 }

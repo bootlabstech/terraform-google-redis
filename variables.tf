@@ -1,12 +1,7 @@
 //required variables
-variable "redis_name" {
-  description = "The ID of the instance or a fully qualified identifier for the instance."
-  type        = list(string)
-}
-
-variable "memory_size_gb" {
-  description = " Redis memory size in GiB."
-  type        = number
+variable "rediscache_details" {
+  description = "The rediscache details"
+  type        = list(any)
 }
 
 variable "project_id" {
@@ -17,14 +12,7 @@ variable "authorized_network" {
   description = "The full name of the Google Compute Engine network to which the instance is connected. If left unspecified, the default network will be used."
   type        = string
 }
-variable "replica_count" {
-  description = "no of replicas for the instance."
-  type        = string
-}
-variable "read_replicas_mode" {
-  description = "replication mode for the instance."
-  type        = string
-}
+
 //optional variables
 
 variable "region" {
@@ -77,8 +65,5 @@ variable "host_project_id" {
   type        = string
   description = "The project id of the host project"
 }
-variable "no_of_redis_caches" {
-  type        = number
-  description = "The no_of_redis_caches in the project"
-}
+
 
