@@ -7,10 +7,9 @@ resource "google_project_service" "redisapi" {
   service = "redis.googleapis.com"
 }
 resource "google_redis_instance" "gcp_redis" {
-  depends_on              = [google_project_service.redisapi]
-  for_each                = { for redis in var.rediscache_details : redis.name => redis }       
-  name                    = each.value.name
-  memory_size_gb          = each.value.memory_size_gb 
+  depends_on              = [google_project_service.redisapi]    
+  name                    = var.redis_name
+  memory_size_gb          = var.memory_size_gb 
   authorized_network      = var.authorized_network
   redis_configs           = var.redis_configs
   redis_version           = var.redis_version
