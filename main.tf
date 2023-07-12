@@ -1,5 +1,5 @@
 data "google_compute_network" "redis-network" {
-  name    = var.name_reserved_ip_range
+  name    = var.authorized_network
   project = var.host_project_id
 }
 resource "google_project_service" "redisapi" {
@@ -19,5 +19,5 @@ resource "google_redis_instance" "gcp_redis" {
   auth_enabled            = var.auth_enabled
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
-  reserved_ip_range       = data.google_compute_network.redis-network.id
+  reserved_ip_range       = var.name_reserved_ip_range
 }
