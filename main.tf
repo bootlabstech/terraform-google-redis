@@ -20,6 +20,7 @@ resource "google_redis_instance" "gcp_redis" {
   transit_encryption_mode = var.transit_encryption_mode
   connect_mode            = var.connect_mode
   reserved_ip_range       = var.name_reserved_ip_range
+  customer_managed_key    = var.cmek
   lifecycle {
     ignore_changes = [labels]
   }

@@ -67,5 +67,9 @@ variable "host_project_id" {
   type        = string
   description = "The project id of the host project"
 }
+variable "cmek" {
+  type        = string
+  description = "cmek for encryption"
+}
 
 
